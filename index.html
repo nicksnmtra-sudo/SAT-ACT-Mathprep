@@ -1,109 +1,174 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Graphite Math · ACT &amp; SAT Prep</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GraphPaper – SAT & ACT Math Prep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f3efe4;--card:#fffdf6;--ink:#14204a;--mut:#5a6486;--lime:#d8f244;--org:#f26b3a;--ln:#d9d2bd;--ok:#1d8a4e;--bad:#c23a2b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0e1633;--card:#17214a;--ink:#f1eee2;--mut:#a8b0d0;--ln:#2c3869}}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-*{box-sizing:inherit}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;margin:.2em 0}h1{font-size:clamp(34px,6vw,56px)}h2{font-size:28px}
-nav{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:12px 20px;border-bottom:1px solid var(--ln);position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
-nav b{font-family:Fraunces,serif;font-size:20px;margin-right:auto}
-button,select,input,textarea{font:inherit;color:inherit}
-.b{border:1.5px solid var(--ink);background:transparent;border-radius:99px;padding:6px 14px;cursor:pointer}
-.b.on,.p{background:var(--ink);color:var(--bg)}.p{border:0;border-radius:99px;padding:10px 20px;cursor:pointer;box-shadow:3px 3px 0 var(--lime)}
-main{max-width:980px;margin:0 auto;padding:24px 20px 60px}
-.g{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
-.c{background:var(--card);border:1.5px solid var(--ink);border-radius:14px;padding:16px}
-.tag{font:600 11px/1 monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
-.q{background:var(--card);border:1.5px solid var(--ln);border-radius:14px;padding:16px;margin:12px 0}
-.q pre{font:inherit;white-space:pre-line;margin:6px 0 10px;font-weight:500}
-.o{display:block;width:100%;text-align:left;margin:6px 0;padding:9px 12px;border:1.5px solid var(--ln);border-radius:10px;background:transparent;cursor:pointer}
-.o.s{border-color:var(--ink);background:var(--lime);color:#14204a}.o.ok{border-color:var(--ok);background:rgba(29,138,78,.18)}.o.no{border-color:var(--bad);background:rgba(194,58,43,.18)}
-.ex{margin-top:8px;border-top:1px dashed var(--ln);padding-top:8px;font-size:14px}.ex li{margin:4px 0}
-.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}
-select,input,textarea{background:var(--card);border:1.5px solid var(--ink);border-radius:10px;padding:8px 10px}textarea{width:100%}
-.hero{padding:30px 0 10px}.pill{display:inline-block;background:var(--lime);color:#14204a;padding:2px 10px;border-radius:99px;font:600 12px monospace}
-.sc{font:700 26px Fraunces,serif}small,.m{color:var(--mut)}code{background:var(--lime);color:#14204a;padding:1px 6px;border-radius:5px}
-.wrap{overflow-x:auto}table{border-collapse:collapse}td,th{border:1px solid var(--ln);padding:5px 10px}
-</style></head><body>
-<nav><b>▲ Graphite Math</b><span id="nv"></span></nav><main id="app"></main>
+:root{--bg:#f4f7fb;--ink:#12263f;--mut:#5b6b80;--card:#fff;--line:#d5deea;--blue:#2456d6;--ok:#1f9d74;--no:#d64550;--hi:#ffe14d;--grid:rgba(36,86,214,.07)}
+@media(prefers-color-scheme:dark){:root{--bg:#0e1623;--ink:#e8eef7;--mut:#93a3b8;--card:#162235;--line:#2a3b54;--blue:#6b95ff;--ok:#3ccf9f;--no:#ff7b85;--hi:#ffe14d;--grid:rgba(107,149,255,.08)}}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Bricolage Grotesque',system-ui,sans-serif;color:var(--ink);background:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px;line-height:1.5}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:14px 20px;background:var(--card);border-bottom:2px solid var(--ink)}
+.logo{font-weight:800;font-size:22px;letter-spacing:-.5px}.logo span{background:var(--hi);color:#12263f;padding:0 6px;margin-left:2px}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+button{font:inherit;cursor:pointer;color:var(--ink)}
+nav button{border:1px solid transparent;background:none;padding:6px 12px;border-radius:6px;font-weight:600}
+nav button.on{background:var(--ink);color:var(--bg)}
+nav button:hover:not(.on){border-color:var(--line)}
+main{max-width:980px;margin:0 auto;padding:24px 16px 120px}
+h1{font-size:30px;letter-spacing:-.8px;margin:0 0 4px}h2{font-size:19px;margin:24px 0 10px}
+.mut{color:var(--mut);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px}
+.btn{background:var(--blue);color:#fff;border:0;border-radius:6px;padding:8px 14px;font-weight:600}
+.btn.alt{background:none;color:var(--ink);border:1px solid var(--line)}
+.btn:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.bar{height:10px;background:var(--line);border-radius:5px;overflow:hidden;margin:6px 0}.bar i{display:block;height:100%;background:var(--blue)}
+.row{display:grid;grid-template-columns:150px 1fr 90px;gap:10px;align-items:center;margin:8px 0}
+.big{font-size:34px;font-weight:800;letter-spacing:-1px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.q{font-size:19px;margin:0 0 16px}
+.ch{display:block;width:100%;text-align:left;margin:8px 0;padding:11px 14px;background:var(--card);border:1.5px solid var(--line);border-radius:6px;font-size:16px}
+.ch:hover:not([disabled]){border-color:var(--blue)}.ch.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 15%,var(--card))}.ch.no{border-color:var(--no);background:color-mix(in srgb,var(--no) 15%,var(--card))}
+.ex{margin-top:14px;padding:12px;border-left:4px solid var(--hi);background:color-mix(in srgb,var(--hi) 14%,var(--card))}
+.tiles{display:flex;flex-wrap:wrap;gap:6px}.tile{width:42px;height:36px;border:1px solid var(--line);background:var(--card);border-radius:5px;font-size:13px}
+.tile.solved{background:var(--ok);color:#fff;border-color:var(--ok)}.tile.missed{background:var(--no);color:#fff;border-color:var(--no)}
+select,input{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;border:1px solid var(--line);color:var(--mut)}
+.plan li{margin:6px 0}
+#dfab{position:fixed;right:16px;bottom:16px;z-index:20;background:var(--hi);color:#12263f;border:2px solid #12263f;border-radius:30px;padding:10px 18px;font-weight:800}
+#dp{position:fixed;right:16px;bottom:70px;width:min(640px,calc(100vw - 32px));height:min(520px,70vh);background:#fff;border:2px solid var(--ink);border-radius:8px;z-index:19;display:none;flex-direction:column;resize:both;overflow:hidden}
+#dp.open{display:flex}#dc{flex:1}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="logo">Graph<span>Paper</span></div><nav id="nav"></nav></header>
+<main id="app"></main>
+<button id="dfab" aria-label="Toggle Desmos calculator">Desmos</button>
+<div id="dp"><div id="dc"></div></div>
+<script src="https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
 <script>
-const R=s=>()=>{s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};
-const ri=(r,a,b)=>a+Math.floor(r()*(b-a+1)),pk=(r,a)=>a[ri(r,0,a.length-1)];
-const T3=(a,d,t)=>[['Algebra',a],['Desmos',d],['Test the choices',t]];
-const sg=n=>n<0?'+ '+-n:'− '+n;
-const G={
-Linear:{d:'Algebra',b:'One-variable equations: isolate x, or graph both sides in Desmos.',f(r,l){const a=ri(r,2,3+l*2),x=ri(r,2,12),b=ri(r,1,20);
-if(l<3){const c=a*x+b;return{q:`If ${a}x + ${b} = ${c}, what is the value of x?`,a:x,w:[x+1,x-1,x+a],s:T3(`Subtract ${b}: ${a}x = ${c-b}. Divide by ${a}: x = ${x}.`,`Graph y = ${a}x + ${b} and y = ${c}; the intersection's x-coordinate is ${x}.`,`Plug each choice into ${a}x + ${b}; only ${x} gives ${c}.`)}}
-return{q:`If ${a}(x + ${b}) = ${a*(x+b)}, what is the value of x?`,a:x,w:[x+b,x-1,x+1],s:T3(`Divide both sides by ${a}: x + ${b} = ${x+b}, so x = ${x}.`,`Graph both sides as two lines and read the intersection.`,`Substitute choices; the right one makes the left side ${a*(x+b)}.`)}}},
-Systems:{d:'Algebra',b:'Two equations, two unknowns: eliminate, substitute, or intersect graphs.',f(r,l){const x=ri(r,1,9),y=ri(r,1,9),p=ri(r,2,4),s=x+y,t=p*x+y,ask=l<3;
-return{q:`x + y = ${s}\n${p}x + y = ${t}\nWhat is the value of ${ask?'x':'xy'}?`,a:ask?x:x*y,w:ask?[y,x+1,x-1]:[x+y,x*y+1,x*y-1],s:T3(`Subtract the equations: ${p-1}x = ${t-s}, so x = ${x}; then y = ${y}.${ask?'':` xy = ${x*y}.`}`,`Type both equations exactly as given; tap the intersection: (${x}, ${y}).`,`Test each (x, y) pair in both equations.`)}}},
-Inequalities:{d:'Algebra',b:'Solve like equations; flip the sign when multiplying/dividing by a negative.',f(r,l){const a=ri(r,2,3+l),x0=ri(r,1,9),b=ri(r,1,15),c=a*x0+b+ri(r,0,a-1);
-return{q:`What is the least integer x that satisfies ${a}x + ${b} > ${c}?`,a:x0+1,w:[x0,x0+2,x0-1],s:T3(`x > ${(c-b)/a} so the least integer is ${x0+1}.`,`Graph y = ${a}x + ${b} and y = ${c}; the line is above for x right of the intersection.`,`Test integers from the choices: the smallest that works is ${x0+1}.`)}}},
-Quadratics:{d:'Advanced Math',b:'Factoring, roots, vertex, and the discriminant.',f(r,l){const p=ri(r,-6,2),d=ri(r,1,4),q=p+2*d,s=p+q,pr=p*q;
-const e='x²'+(s?` ${s>0?'−':'+'} ${Math.abs(s)}x`:'')+(pr?` ${pr<0?'−':'+'} ${Math.abs(pr)}`:'');
-if(l<3)return{q:`What is the sum of the solutions of ${e} = 0?`,a:s,w:[pr,-s,s+1],s:T3(`Sum of roots = −b/a = ${s} (roots ${p} and ${q}).`,`Graph y = ${e}; tap the gray zeros and add them.`,`Plug in candidate roots to confirm, then add.`)};
-return{q:`What is the minimum value of y = ${e}?`,a:-d*d,w:[d*d,-d,-(d+1)**2],s:T3(`Vertex x = (${p}+${q})/2 = ${p+d}. Substitute: y = ${-d*d}.`,`Graph it and tap the gray vertex point.`,`Evaluate y at x = ${p+d} and compare with the choices.`)}}},
-Exponentials:{d:'Advanced Math',b:'Growth and decay: y = a(b)^t. Identify start, factor, and time.',f(r,l){
-if(l<3){const N=ri(r,2,9)*100,h=ri(r,2,4),k=ri(r,2,4);return{q:`A culture starts with ${N} bacteria and doubles every ${h} hours. How many are there after ${h*k} hours?`,a:N*2**k,w:[N*2*k,N*h*k,N*2**(k+1)],s:T3(`Number of doublings = ${h*k}/${h} = ${k}. ${N}·2^${k} = ${N*2**k}.`,`Graph y = ${N}·2^(x/${h}) and read y at x = ${h*k}.`,`Double ${N} step by step ${k} times.`)}}
-const P=ri(r,1,6)*1000;return{q:`$${P} grows 20% per year, compounded annually. What is its value after 2 years?`,a:P*1.44,w:[P*1.4,P*1.2,P*2.4],s:T3(`${P}(1.20)² = ${P*1.44}.`,`Graph y = ${P}(1.2)^x and read x = 2.`,`Compute year 1 (×1.2) then year 2 (×1.2). Not ×1.4!`)}}},
-Functions:{d:'Advanced Math',b:'Function notation, evaluation, and composition.',f(r,l){const a=ri(r,2,5),b=ri(r,1,9),k=ri(r,2,5);
-if(l<3)return{q:`If f(x) = ${a}x² + ${b}, what is f(${k})?`,a:a*k*k+b,w:[(a*k)**2+b,a*k+b,a*k*k-b],s:T3(`${a}(${k})² + ${b} = ${a*k*k+b}.`,`Define f(x) = ${a}x² + ${b}, then type f(${k}).`,`Square first, then multiply, then add.`)};
-return{q:`If f(x) = ${a}x + ${b} and g(x) = x², what is g(f(${k}))?`,a:(a*k+b)**2,w:[a*k*k+b,a*k+b,(a*k)**2+b],s:T3(`f(${k}) = ${a*k+b}; g of that = ${(a*k+b)**2}.`,`Define f and g; type g(f(${k})).`,`Work inside-out: inner function first.`)}}},
-Percents:{d:'Problem Solving & Data',b:'Percent change = (new − old)/old × 100. Chain multipliers.',f(r,l){
-if(l<3){const o=ri(r,1,12)*20,p=pk(r,[10,20,25,50]),n=o*(100+p)/100;return{q:`A price rises from $${o} to $${n}. By what percent did it increase?`,a:p+'%',w:[p+5+'%',p*2+'%',p-5+'%'],s:T3(`(${n}−${o})/${o} = ${p}%.`,`Compute ${n-o} ÷ ${o} × 100 as a calculator expression.`,`Test: ${o} × (1 + choice) must equal ${n}.`)}}
-const a=pk(r,[10,20,25,50]),b=pk(r,[10,20,25]),net=+((100+a)*(100-b)/100-100).toFixed(1);return{q:`A quantity increases by ${a}% and then decreases by ${b}%. What is the net percent change?`,a:net+'%',w:[a-b+'%',a+b+'%',-b+'%'],s:T3(`Multipliers: ${1+a/100} × ${1-b/100} = ${+((100+a)*(100-b)/10000).toFixed(4)} → ${net}%.`,`Start at 100 and apply both changes in Desmos.`,`Pick 100 as the starting value and apply each change.`)}}},
-Regression:{d:'Problem Solving & Data',b:'Lines of best fit, predictions, residuals, and Desmos regression.',f(r,l){const m=ri(r,2,9),b=ri(r,5,30),x=ri(r,3,12),pr=m*x+b,d=ri(r,2,9);
-if(l<3)return{q:`A line of best fit is ŷ = ${m}x + ${b}. What y-value does it predict when x = ${x}?`,a:pr,w:[m*x,m+x+b,(m+b)*x],s:T3(`${m}(${x}) + ${b} = ${pr}.`,`Type the line and read y at x = ${x}.`,`Check each choice against the formula.`)};
-return{q:`A line of best fit is ŷ = ${m}x + ${b}. At x = ${x} the observed value is ${pr+d}. What is the residual?`,a:d,w:[-d,pr+d,d+m],s:T3(`Residual = observed − predicted = ${pr+d} − ${pr} = ${d}.`,`Plot the point and the line; the vertical gap is the residual.`,`Sign check: observed above line → positive.`)}}},
-Statistics:{d:'Problem Solving & Data',b:'Mean, median, and working backwards from an average.',f(r,l){
-if(l<3){const n=[ri(r,1,20),ri(r,1,20),ri(r,1,20),ri(r,1,20)];let e=ri(r,1,20);e+=(5-(n[0]+n[1]+n[2]+n[3]+e)%5)%5;n.push(e);const m=n.reduce((x,y)=>x+y)/5;return{q:`What is the mean of ${n.join(', ')}?`,a:m,w:[m+1,m-1,m+2],s:T3(`Sum = ${m*5}; ÷ 5 = ${m}.`,`Enter the list in brackets and use mean().`,`Estimate: the mean sits between the min and max.`)}}
-const m=ri(r,20,40),n=[0,0,0,0].map(()=>ri(r,m-5,m+5)),f=5*m-n.reduce((x,y)=>x+y);return{q:`The mean of 5 numbers is ${m}. Four of them are ${n.join(', ')}. What is the fifth?`,a:f,w:[f+5,f-5,m],s:T3(`Total = 5×${m} = ${5*m}. Fifth = ${5*m} − ${5*m-f} = ${f}.`,`Type ${5*m} − (${n.join('+')}).`,`Add each choice to the four numbers and check the mean.`)}}},
-Rates:{d:'Problem Solving & Data',b:'Ratios, proportions, unit rates, and speed-distance-time.',f(r,l){
-if(l<3){const a=ri(r,2,5),b=ri(r,2,5),s=b*ri(r,2,8);return{q:`A recipe uses ${a} cups of flour for every ${b} cups of sugar. How much flour is needed for ${s} cups of sugar?`,a:a*s/b,w:[a*s/b+a,s-b+a,a*s],s:T3(`${a}/${b} = x/${s} → x = ${a*s/b}.`,`Graph y = (${a}/${b})x and read x = ${s}.`,`Scale the ratio up by ${s/b}.`)}}
-const v=ri(r,3,9)*10,h=ri(r,2,5),D=v*ri(r,6,12);return{q:`A car travels ${v*h} miles in ${h} hours at constant speed. How many hours for ${D} miles?`,a:D/v,w:[D/v+1,D/v-1,D/v*h],s:T3(`Speed = ${v} mph. Time = ${D}/${v} = ${D/v}.`,`Graph y = ${v}x and find where y = ${D}.`,`Multiply speed by each choice.`)}}},
-Circles:{d:'Geometry & Trig',b:'(x−h)² + (y−k)² = r², area πr², circumference 2πr.',f(r,l){const h=ri(r,1,6)*pk(r,[1,-1]),k=ri(r,1,6)*pk(r,[1,-1]),R2=ri(r,2,9);
-const e=`(x ${h<0?'+':'−'} ${Math.abs(h)})² + (y ${k<0?'+':'−'} ${Math.abs(k)})² = ${R2*R2}`;
-if(l<3)return{q:`A circle has equation ${e}. What is its radius?`,a:R2,w:[R2*R2,R2*2,R2+1],s:T3(`Right side is r² = ${R2*R2}, so r = ${R2}.`,`Type the equation to see the circle and measure.`,`Test: ${R2}² = ${R2*R2}.`)};
-return{q:`A circle has equation ${e}. What is its area?`,a:R2*R2+'π',w:[R2+'π',2*R2+'π',R2**3+'π'],s:T3(`r² = ${R2*R2}, area = πr² = ${R2*R2}π.`,`Read r² directly from the equation.`,`Eliminate: area is π × r², not π × r.`)}}},
-Trig:{d:'Geometry & Trig',b:'Pythagorean triples and SOH-CAH-TOA.',f(r,l){const t=pk(r,[[3,4,5],[5,12,13],[8,15,17],[7,24,25]]),k=ri(r,1,3);
-if(l<3)return{q:`A right triangle has legs ${t[0]*k} and ${t[1]*k}. What is the hypotenuse?`,a:t[2]*k,w:[t[0]*k+t[1]*k,t[2]*k+1,t[1]*k+1],s:T3(`√(${t[0]*k}² + ${t[1]*k}²) = ${t[2]*k}.`,`Type sqrt(${t[0]*k}^2+${t[1]*k}^2).`,`Spot the ${t.join('-')} triple scaled by ${k}.`)};
-return{q:`In right triangle ABC (right angle at C), AC = ${t[1]*k}, BC = ${t[0]*k}. What is sin A?`,a:`${t[0]}/${t[2]}`,w:[`${t[1]}/${t[2]}`,`${t[0]}/${t[1]}`,`${t[2]}/${t[0]}`],s:T3(`sin A = opposite/hypotenuse = ${t[0]*k}/${t[2]*k} = ${t[0]}/${t[2]}.`,`Compute the hypotenuse, then the ratio as a fraction.`,`Eliminate ratios that exceed 1.`)}}}};
-const TS=Object.keys(G),LV={SAT:['400–500','500–600','600–700','700–800'],ACT:['15–19','20–24','25–29','30–36']};
-let S={m:'SAT',lv:2,v:'home',t:'Linear',tn:1,seed:1,ans:{},sub:false,list:[]};
-function mk(t,seed,l){const r=R(seed),g=G[t].f(r,l),s=new Set([String(g.a)]);g.w.forEach(x=>s.add(String(x)));
-let k=1;while(s.size<4){s.add(String(+g.a+k++))}let c=[...s].slice(0,4);for(let i=3;i>0;i--){const j=ri(r,0,i);[c[i],c[j]]=[c[j],c[i]]}
-return{t,l,q:g.q,c,a:c.indexOf(String(g.a)),s:g.s}}
-const hs=s=>[...s].reduce((a,c)=>a*31+c.charCodeAt(0)|0,7);
-function test(n){const L=S.m=='SAT'?54:60,b=hs(S.m)+n*997;return Array.from({length:L},(_,i)=>mk(TS[(i+n*3)%TS.length],b+i*13,1+Math.floor(i*4/L)))}
-function QH(q,k,mode){const a=S.ans[k],rev=S.sub||(mode=='p'&&a!=null);
-return`<div class="q"><span class="tag">${q.t} · ${['Easy','Medium','Hard','Expert'][q.l-1]}</span><pre>${q.q}</pre>`+q.c.map((x,i)=>`<button class="o ${rev?(i==q.a?'ok':i==a?'no':''):(a==i?'s':'')}" onclick="pick('${k}',${i},'${mode}')">${'ABCD'[i]}. ${x}</button>`).join('')+
-(rev?`<div class="ex"><b>${a==q.a?'✓ Correct.':'Answer: '+'ABCD'[q.a]}</b> Approaches:<ol>${q.s.map(s=>`<li><b>${s[0]}:</b> ${s[1]}</li>`).join('')}</ol></div>`:'')+'</div>'}
-function pick(k,i,m){if(S.sub)return;S.ans[k]=i;m=='p'?draw():draw(true)}
-const lvSel=()=>`<select onchange="S.lv=+this.value;S.ans={};S.list=[];draw()">${LV[S.m].map((x,i)=>`<option value="${i+1}" ${S.lv==i+1?'selected':''}>Target ${x}</option>`).join('')}</select>`;
-const modeBt=()=>['SAT','ACT'].map(m=>`<button class="b ${S.m==m?'on':''}" onclick="S.m='${m}';S.ans={};S.list=[];S.sub=false;draw()">${m} Math</button>`).join('');
-function go(v,t){S.v=v;if(t)S.t=t;S.ans={};S.sub=false;S.list=[];S.seed=1;draw();scrollTo(0,0)}
-function more(){const a=Array.from({length:10},(_,i)=>mk(S.t,hs(S.m+S.t)+S.lv*7919+(S.seed*10+i)*31,S.lv));S.list=S.list.concat(a);S.seed++;draw()}
-function reg(){const X=document.getElementById('rx').value.split(/[\s,]+/).filter(Boolean).map(Number),Y=document.getElementById('ry').value.split(/[\s,]+/).filter(Boolean).map(Number),n=X.length,o=document.getElementById('ro');
-if(n<2||n!=Y.length||X.some(isNaN)||Y.some(isNaN)){o.textContent='Enter the same number of x and y values (at least 2).';return}
-const mx=X.reduce((a,b)=>a+b)/n,my=Y.reduce((a,b)=>a+b)/n;let sxy=0,sxx=0,syy=0;X.forEach((x,i)=>{sxy+=(x-mx)*(Y[i]-my);sxx+=(x-mx)**2;syy+=(Y[i]-my)**2});
-if(!sxx){o.textContent='x values must vary.';return}const m=sxy/sxx,b=my-m*mx,rr=syy?sxy/Math.sqrt(sxx*syy):1;
-o.innerHTML=`<b>y₁ ~ mx₁ + b</b> → <code>y = ${m.toFixed(3)}x + ${b.toFixed(3)}</code> &nbsp; r = ${rr.toFixed(3)}, r² = ${(rr*rr).toFixed(3)}`}
-function ask(){const t=document.getElementById('ti').value.toLowerCase(),M=[['Linear',/linear|solve|equation/],['Systems',/system|simultan/],['Quadratics',/quadrat|parabola|vertex|root|factor/],['Exponentials',/expon|growth|decay|compound/],['Percents',/percent|%/],['Regression',/regress|best fit|scatter|residual|desmos/],['Circles',/circle|radius/],['Trig',/trig|sin|cos|tan|triangle/],['Statistics',/mean|median|average|stat/],['Functions',/function|f\(|compos/],['Rates',/rate|ratio|speed|proportion/],['Inequalities',/inequal/]];
-const t0=(M.find(x=>x[1].test(t))||[S.t])[0],q=mk(t0,Date.now()%100000,S.lv);
-document.getElementById('to').innerHTML=`<div class="c"><h3>${t0}</h3><p>${G[t0].b}</p><p class="tag">Worked example</p><pre style="font:inherit;white-space:pre-line">${q.q}</pre><p><b>Answer: ${q.c[q.a]}</b></p><ol>${q.s.map(s=>`<li><b>${s[0]}:</b> ${s[1]}</li>`).join('')}</ol><p class="m">Rule of thumb: try algebra first; if it's messy, graph in Desmos; if stuck, test the choices.</p></div>`}
-function draw(keep){const y=scrollY;let h='';const V=S.v;
-document.getElementById('nv').innerHTML=[['home','Home'],['topics','Topics'],['tests','Practice Tests'],['bank','Question Bank'],['desmos','Desmos Lab'],['tutor','AI Tutor']].map(x=>`<button class="b ${V==x[0]?'on':''}" onclick="go('${x[0]}')">${x[1]}</button>`).join(' ');
-const bar=`<div class="row">${modeBt()} ${lvSel()}</div>`;
-if(V=='home')h=`<div class="hero"><span class="pill">ACT · SAT · MATH</span><h1>Practice at <em>your</em> level. Graph your way to the score.</h1><p class="m">Topic lessons with every solving approach, a question bank that adapts to your target score, and ${S.m=='SAT'?'5 full SAT practice tests (54 questions each)':'5 full ACT practice tests (60 questions each)'} ordered easy → hard.</p>${bar}<button class="p" onclick="go('tests')">Take a practice test</button> <button class="b" onclick="go('topics')">Browse topics</button></div>
-<div class="g" style="margin-top:28px">${[['Topic sections','12 topics, each with a worked example and 3 approaches'],['Question bank','Endless fresh questions at your target level'],['Desmos Lab','Regression walkthrough + calculator'],['AI Tutor','Ask about any topic, get every approach']].map(x=>`<div class="c"><h3>${x[0]}</h3><p class="m">${x[1]}</p></div>`).join('')}</div>`;
-else if(V=='topics')h=`<h2>Topics</h2>${bar}<div class="g">${TS.map(t=>`<div class="c"><span class="tag">${G[t].d}</span><h3>${t}</h3><p class="m">${G[t].b}</p><button class="b" onclick="go('topic','${t}')">Open</button></div>`).join('')}</div>`;
-else if(V=='topic'){const q=mk(S.t,42+hs(S.t),S.lv);h=`<button class="b" onclick="go('topics')">← Topics</button><h2>${S.t}</h2><p>${G[S.t].b}</p>${bar}<h3>Worked example</h3>${QH(q,'ex','p')}${(S.ans.ex==null)?'<p class="m">Tap an answer to see all approaches.</p>':''}<h3>Practice</h3><button class="p" onclick="more()">${S.list.length?'10 more':'Start 10 questions'}</button>${S.list.map((q,i)=>QH(q,'b'+i,'p')).join('')}`}
-else if(V=='tests')h=`<h2>${S.m} Practice Tests</h2><p class="m">Each test runs easy → hard across all topics.</p>${bar}<div class="g">${[1,2,3,4,5].map(n=>`<div class="c"><h3>Test ${n}</h3><p class="m">${S.m=='SAT'?54:60} questions</p><button class="p" onclick="S.v='run';S.tn=${n};S.ans={};S.sub=false;draw();scrollTo(0,0)">Start</button></div>`).join('')}</div>`;
-else if(V=='run'){const L=test(S.tn),sc=L.filter((q,i)=>S.ans['t'+i]==q.a).length;h=`<button class="b" onclick="go('tests')">← Tests</button><h2>${S.m} Test ${S.tn}</h2>${S.sub?`<div class="c"><span class="sc">${sc} / ${L.length}</span> correct (${Math.round(sc/L.length*100)}%). Review each explanation below.</div>`:`<p class="m">${Object.keys(S.ans).length}/${L.length} answered</p>`}${L.map((q,i)=>QH(q,'t'+i,'t')).join('')}${S.sub?'':'<button class="p" onclick="S.sub=true;draw();scrollTo(0,0)">Submit test</button>'}`}
-else if(V=='bank')h=`<h2>Question Bank</h2><p class="m">Choose a topic and a score level, then generate as many questions as you like.</p>${bar}<div class="row">${TS.map(t=>`<button class="b ${S.t==t?'on':''}" onclick="S.t='${t}';S.list=[];S.ans={};S.seed=1;draw()">${t}</button>`).join('')}</div><button class="p" onclick="more()">${S.list.length?'10 more':'Generate 10'}</button>${S.list.map((q,i)=>QH(q,'b'+i,'p')).join('')}`;
-else if(V=='desmos')h=`<h2>Desmos Lab: Regression</h2><div class="c"><ol><li>Open <a href="https://www.desmos.com/calculator" target="_blank" rel="noopener">desmos.com/calculator</a> (the same calculator is built into the digital SAT; the ACT allows approved calculators).</li><li>Click <b>+ → table</b>. Enter x in <code>x₁</code>, y in <code>y₁</code>.</li><li>In a new line type <code>y₁ ~ mx₁ + b</code>. Desmos shows m, b, r, r² and a residual plot.</li><li>For exponentials use <code>y₁ ~ a·b^x₁</code>; for quadratics <code>y₁ ~ ax₁² + bx₁ + c</code>.</li><li>To predict, type the x-value into the line, e.g. <code>y = 2.5x + 10</code> and tap the point.</li><li>r near ±1 means strong linear fit; the sign of r matches the slope. Residual = observed − predicted.</li></ol></div><h3>Try it (same math Desmos does)</h3><div class="c"><p>x values</p><textarea id="rx" rows="1">1 2 3 4 5</textarea><p>y values</p><textarea id="ry" rows="1">3 5 8 9 13</textarea><div class="row"><button class="p" onclick="reg()">Fit line</button></div><p id="ro" class="m"></p></div>`;
-else h=`<h2>AI Tutor</h2><p class="m">Ask about any topic (e.g. "how do I find the vertex?"). The tutor shows a worked example with every approach: algebra, Desmos, and testing choices.</p>${bar}<div class="row"><input id="ti" style="flex:1;min-width:200px" placeholder="Ask a question…" onkeydown="if(event.key=='Enter')ask()"><button class="p" onclick="ask()">Ask</button></div><div id="to"></div>`;
-document.getElementById('app').innerHTML=h;if(keep)scrollTo(0,y)}
-draw();
-</script></body></html>
+/* ---------- seeded RNG + helpers ---------- */
+const rng=s=>()=>{s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};
+const R=(r,a,b)=>a+Math.floor(r()*(b-a+1)),sg=r=>r()<.5?-1:1,t=n=>n<0?`− ${-n}`:`+ ${n}`;
+const gcd=(a,b)=>b?gcd(b,a%b):a,fr=(a,b)=>{const g=gcd(a,b);return a/g+'/'+b/g};
+const shuf=(r,a)=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+function mc(r,c,ws){const o=[String(c)];ws.forEach(w=>{w=String(w);if(!o.includes(w))o.push(w)});let k=1;
+ while(o.length<4){const v=isNaN(c)?['None of these','Cannot be determined','Both A and B'][k-1]:String(+c+k*(k%2?1:-1)*Math.ceil(k/2));k++;if(!o.includes(v))o.push(v)}
+ const ch=shuf(r,o.slice(0,4));return{ch,a:ch.indexOf(String(c))}}
+const TR=[[3,4,5],[5,12,13],[8,15,17],[7,24,25]];
+
+/* ---------- question templates: (rng, hard) => [text, correct, wrongs[], explanation] ---------- */
+const TP=[
+{k:'li',n:'Linear Equations',t:[
+ (r,h)=>{const x=R(r,2,9+h*9)*sg(r),a=R(r,2,6+h*5),b=R(r,3,12+h*20);return[`If ${a}x + ${b} = ${a*x+b}, what is the value of x?`,x,[-x,x+1,x-1],`Subtract ${b}, then divide by ${a}: x = ${x}.`]},
+ (r,h)=>{const m=R(r,2,6+h*4)*sg(r),d=R(r,1,4),x=R(r,0,6),y=R(r,-5,9);return[`A line passes through (${x}, ${y}) and (${x+d}, ${y+m*d}). What is its slope?`,m,[-m,m+1,m-1],`Slope = Δy/Δx = ${m*d}/${d} = ${m}.`]},
+ (r,h)=>{const m=R(r,2,7+h*3)*sg(r),b=R(r,-9,12),p=R(r,1,6);return[`A line with slope ${m} passes through (${p}, ${m*p+b}). What is its y-intercept?`,b,[m*p+b,-b,b+m],`y = ${m}x + b, so ${m*p+b} = ${m*p} + b and b = ${b}.`]},
+ (r,h)=>{const a=R(r,2,7+h*3),d=R(r,2,6),c=a*d+R(r,1,5);return[`For what value of k does ${a}(x + ${d}) = kx + ${c} have no solution?`,a,[-a,a+1,a-1],`Expanding gives ${a}x + ${a*d} = kx + ${c}. Equal slopes with different intercepts means no solution, so k = ${a}.`]}]},
+{k:'sy',n:'Systems of Equations',t:[
+ (r,h)=>{const x=R(r,4,14+h*6),y=R(r,1,x-1);return[`If x + y = ${x+y} and x − y = ${x-y}, what is x?`,x,[y,x+y,x+1],`Add the equations: 2x = ${2*x}, so x = ${x}.`]},
+ (r,h)=>{let a,b,d,e;do{a=R(r,1,5);b=R(r,1,5);d=R(r,1,5);e=R(r,1,5)}while(a*e===b*d);const x=R(r,-3,6),y=R(r,-3,6),A=h?x*y:x+y;return[`If ${a}x + ${b}y = ${a*x+b*y} and ${d}x + ${e}y = ${d*x+e*y}, what is ${h?'xy':'x + y'}?`,A,[A+1,A-2,h?x+y:x*y],`Solving the system gives x = ${x}, y = ${y}.`]},
+ (r,h)=>{const a=R(r,2,5),b=R(r,2,5),c=R(r,2,9),m=R(r,2,4);return[`The system ${a}x + ${b}y = ${c} and kx + ${b*m}y = ${c*m} has infinitely many solutions. What is k?`,a*m,[a+m,a*m+1,c*m],`The second equation must be ${m} times the first, so k = ${a}·${m} = ${a*m}.`]}]},
+{k:'qu',n:'Quadratics',t:[
+ (r,h)=>{let p=R(r,-8,8),q=R(r,-8,8);if(p===q||p+q===0)q=p+3;return[`What is the greater solution of x² ${t(-(p+q))}x ${t(p*q)} = 0?`,Math.max(p,q),[Math.min(p,q),-Math.max(p,q),p+q],`Factor: (x ${t(-p)})(x ${t(-q)}) = 0, so x = ${p} or ${q}.`]},
+ (r,h)=>{const k=R(r,1,6)*sg(r),c=R(r,1,20);return[`What is the minimum value of y = x² ${t(-2*k)}x ${t(c)}?`,c-k*k,[c,k,c+k*k],`Complete the square: y = (x ${t(-k)})² + (${c-k*k}). The minimum is ${c-k*k}.`]},
+ (r,h)=>{const b=2*R(r,2,7+h*5)*sg(r),c=b*b/4;return[`For what value of c does x² ${t(b)}x + c = 0 have exactly one real solution?`,c,[b*b,b/2,-c],`The discriminant b² − 4c must be 0, so c = ${b}²/4 = ${c}.`]},
+ (r,h)=>{let p=R(r,-7,7),q=R(r,-7,7);if(p===q)q=p+2;return[`If (x ${t(-p)})(x ${t(-q)}) = 0, what is the sum of the squares of the solutions?`,p*p+q*q,[(p+q)**2,p+q,p*q],`The solutions are ${p} and ${q}: ${p}² + ${q}² = ${p*p+q*q}.`]}]},
+{k:'ex',n:'Exponents & Radicals',t:[
+ (r,h)=>{const B=R(r,2,5),a=R(r,3,9+h*4),b=R(r,2,8),c=R(r,1,a+b-1);return[`If ${B}<sup>${a}</sup> · ${B}<sup>${b}</sup> ÷ ${B}<sup>${c}</sup> = ${B}<sup>n</sup>, what is n?`,a+b-c,[a+b+c,a*b-c,a+b],`Add exponents when multiplying, subtract when dividing: ${a} + ${b} − ${c} = ${a+b-c}.`]},
+ (r,h)=>{const m=[2,3,5,6,7][R(r,0,4)],k=R(r,2,8+h*5);return[`Which expression is equivalent to √${k*k*m}?`,`${k}√${m}`,[`${m}√${k}`,`${k*k}√${m}`,`${k+m}√${m}`],`√${k*k*m} = √(${k*k}·${m}) = ${k}√${m}.`]},
+ (r,h)=>{const B=R(r,2,4),n=R(r,2,9);return h?[`If ${B**3}<sup>x</sup> = ${B}<sup>x+${2*n}</sup>, what is 2x?`,2*n,[n,n+2,3*n],`Rewrite ${B**3} as ${B}³: 3x = x + ${2*n}, so x = ${n} and 2x = ${2*n}.`]:[`If ${B*B}<sup>x</sup> = ${B}<sup>x+${n}</sup>, what is x?`,n,[n+1,2*n,n/2],`${B*B}<sup>x</sup> = ${B}<sup>2x</sup>, so 2x = x + ${n} and x = ${n}.`]}]},
+{k:'pr',n:'Percent, Ratio & Rates',t:[
+ (r,h)=>{const P=[10,20,25,50],a=P[R(r,0,2)],d=P[R(r,0,3)],p=400*R(r,1,5),f=p*(100+a)*(100-d)/10000;return[`A jacket priced at $${p} is marked up ${a}% and then discounted ${d}%. What is the final price in dollars?`,f,[p*(100+a-d)/100,p,f+10],`${p} × ${1+a/100} × ${1-d/100} = ${f}. Percent changes multiply; they do not add.`]},
+ (r,h)=>{const a=R(r,2,7),b=R(r,a+1,9),k=R(r,2,9+h*8);return[`The ratio of boys to girls is ${a}:${b}. If there are ${(a+b)*k} students in total, how many are girls?`,b*k,[a*k,b*k+k,(a+b)*k-k],`Each ratio part is ${(a+b)*k}/${a+b} = ${k}, so girls = ${b}·${k} = ${b*k}.`]},
+ (r,h)=>{const q=R(r,3,12+h*8),a=R(r,2,6),b=R(r,a+1,12);return[`A machine makes ${q*a} units in ${a} hours at a constant rate. How many units does it make in ${b} hours?`,q*b,[q*a+b,q*b+q,q*a*b],`Rate = ${q} units/hour, so ${b} hours gives ${q*b}.`]}]},
+{k:'fn',n:'Functions',t:[
+ (r,h)=>{const a=R(r,1,4)*sg(r),b=R(r,-6,6),c=R(r,-9,9),n=R(r,-3,4),f=a*n*n+b*n+c;return[`If f(x) = ${a}x² ${t(b)}x ${t(c)}, what is f(${n})?`,f,[f-c,f+a,-f],`Substitute x = ${n}: ${a}(${n*n}) + ${b*n} + ${c} = ${f}.`]},
+ (r,h)=>{const a=R(r,2,5),b=R(r,-5,5),c=R(r,1,3),d=R(r,-4,6),n=R(r,1,4),g=c*n*n+d;return[`If f(x) = ${a}x ${t(b)} and g(x) = ${c}x² ${t(d)}, what is f(g(${n}))?`,a*g+b,[c*(a*n+b)**2+d,g,a*n+b+g],`g(${n}) = ${g}, then f(${g}) = ${a*g+b}.`]},
+ (r,h)=>{const k=R(r,2,6)*sg(r),b=R(r,-8,8);return[`The linear function f satisfies f(1) = ${k+b} and f(3) = ${3*k+b}. What is f(5)?`,5*k+b,[4*k+b,3*k+b+2,6*k+2*b],`Slope = ${k}, so f(5) = f(3) + 2·${k} = ${5*k+b}.`]}]},
+{k:'ge',n:'Geometry & Trigonometry',t:[
+ (r,h)=>{const[a,b,c]=TR[R(r,0,3)],k=R(r,1,4+h*3);return h?[`A right triangle has hypotenuse ${c*k} and one leg ${a*k}. What is the other leg?`,b*k,[c*k-a*k,b*k+1,a*k+b*k],`√(${c*k}² − ${a*k}²) = ${b*k}.`]:[`A right triangle has legs ${a*k} and ${b*k}. What is its hypotenuse?`,c*k,[a*k+b*k,c*k+1,c*k-1],`√(${a*k}² + ${b*k}²) = ${c*k}.`]},
+ (r,h)=>{const x=R(r,2,12+h*8);return[`A circle has area ${x*x}π. What is its circumference?`,`${2*x}π`,[`${x*x}π`,`${x}π`,`${4*x*x}π`],`r = ${x}, so C = 2πr = ${2*x}π.`]},
+ (r,h)=>{const[a,b,c]=TR[R(r,0,3)],k=R(r,1,5);return[`In right triangle ABC, the right angle is at B, AB = ${b*k}, BC = ${a*k}, and AC = ${c*k}. What is ${h?'tan':'sin'} A?`,h?`${a}/${b}`:`${a}/${c}`,h?[`${b}/${a}`,`${a}/${c}`,`${b}/${c}`]:[`${b}/${c}`,`${a}/${b}`,`${c}/${a}`],h?'tan A = opposite/adjacent = BC/AB.':'sin A = opposite/hypotenuse = BC/AC.']},
+ (r,h)=>{const n=h?[6,8,9,10,12,15,18,20][R(r,0,7)]:R(r,5,12);return h?[`What is the measure, in degrees, of each interior angle of a regular polygon with ${n} sides?`,(n-2)*180/n,[(n-2)*180,360/n,(n-2)*180/n+10],`Interior sum = (${n}−2)·180; divide by ${n}.`]:[`What is the sum of the interior angles, in degrees, of a polygon with ${n} sides?`,(n-2)*180,[n*180,(n-1)*180,(n-2)*90],`(n − 2)·180 = ${(n-2)*180}.`]}]},
+{k:'st',n:'Statistics & Probability',t:[
+ (r,h)=>{const m=R(r,15,30),v=[0,1,2,3].map(()=>R(r,m-6,m+6)),f=5*m-v.reduce((a,b)=>a+b,0);return f<1?[`The mean of 4 numbers is ${m}. If a fifth number equal to ${m} is added, what is the mean of all 5?`,m,[m+1,m-1,2*m],'Adding a value equal to the mean leaves the mean unchanged.']:[`The mean of five numbers is ${m}. Four of them are ${v.join(', ')}. What is the fifth number?`,f,[f+m,f-5,5*m],`Total = 5·${m} = ${5*m}; ${5*m} − ${v.reduce((a,b)=>a+b,0)} = ${f}.`]},
+ (r,h)=>{const a=R(r,2,9),b=R(r,2,9),c=R(r,2,9),T=a+b+c;return[`A bag has ${a} red, ${b} blue, and ${c} green marbles. What is the probability a random marble is blue?`,fr(b,T),[fr(b,T-b),fr(b,a),fr(T-b,T)],`P = blue/total = ${b}/${T}, reduced.`]},
+ (r,h)=>{const n=h?9:7,s=new Set;while(s.size<n)s.add(R(r,3,60));const v=[...s],so=[...v].sort((x,y)=>x-y),m=so[(n-1)/2];return[`What is the median of ${v.join(', ')}?`,m,[so[(n-1)/2-1],so[(n-1)/2+1],Math.round(v.reduce((x,y)=>x+y,0)/n)],`Sorted: ${so.join(', ')}. The middle value is ${m}.`]},
+ (r,h)=>{const n=R(r,4,9),m=R(r,10,20),m2=m+R(r,1,5),v=m+(m2-m)*(n+1);return[`The mean of ${n} numbers is ${m}. After a sixth value... adding the number ${v} to the list, what is the new mean?`.replace('a sixth value... ',''),m2,[v,m+1,(m+v)/2],`New total = ${n*m} + ${v} = ${n*m+v}; divide by ${n+1} to get ${m2}.`]}]}
+];
+const mk=(T,i,mode,h)=>{const r=rng((T.k.charCodeAt(0)*1000+T.k.charCodeAt(1))*131+i*7919+mode*555555);
+ const[q,c,ws,e]=T.t[i%T.t.length](r,h),m=mc(r,c,ws);return{id:`${T.k}${mode}${i}`,k:T.k,q,ch:m.ch,a:m.a,e,lv:mode?(h?'Hard':'Moderate'):'Practice'}};
+const PR=TP.flatMap(T=>Array.from({length:45},(_,i)=>mk(T,i,0,i%4===3?1:0)));   // 45 per topic = 360
+const BK=TP.flatMap(T=>Array.from({length:45},(_,i)=>mk(T,i,1,i%3?1:0)));       // 360 moderate-to-hard
+
+/* ---------- state ---------- */
+let S;try{S=JSON.parse(localStorage.gp)}catch(e){}S=S||{a:{},g:{}};
+const save=()=>{try{localStorage.gp=JSON.stringify(S)}catch(e){}};
+const $=s=>document.querySelector(s),app=$('#app'),tn=k=>TP.find(x=>x.k===k).n;
+const st=id=>S.a[id]?(S.a[id].o?'solved':'missed'):'new';
+const tstat=k=>{const e=Object.values(S.a).filter(x=>x.k===k),n=e.length,c=e.reduce((s,x)=>s+x.o,0);return{n,c,acc:n?c/n:null,tm:n?e.reduce((s,x)=>s+x.s,0)/n:0}};
+const pct=x=>x==null?'–':Math.round(x*100)+'%';
+
+/* ---------- navigation ---------- */
+let view='dash',F={k:'all',s:'all'},Q={};
+function nav(v){view=v;$('#nav').innerHTML=[['dash','Dashboard'],['prac','Topic Practice'],['bank','Question Bank'],['plan','Plan Analyzer']].map(([k,l])=>`<button class="${k==v?'on':''}" onclick="nav('${k}')">${l}</button>`).join('');({dash,prac,bank,plan})[v]();window.scrollTo(0,0)}
+
+function dash(){const all=Object.values(S.a),n=all.length,c=all.reduce((s,x)=>s+x.o,0),acc=n?c/n:null;
+ const est=n>=10?200+Math.round(600*acc/10)*10:null;
+ app.innerHTML=`<h1>SAT & ACT Math, topic by topic</h1><p class="mut">${PR.length} practice questions, ${BK.length} bank questions, and a built-in Desmos calculator. Progress is saved in this browser.</p>
+ <div class="grid"><div class="card"><div class="big">${n}</div><div class="mut">questions answered</div></div><div class="card"><div class="big">${pct(acc)}</div><div class="mut">overall accuracy</div></div><div class="card"><div class="big">${est||'–'}</div><div class="mut">rough SAT Math estimate (needs 10+ answers)</div></div></div>
+ <h2>Accuracy by topic</h2><div class="card">${TP.map(T=>{const s=tstat(T.k);return`<div class="row"><b>${T.n}</b><div class="bar"><i style="width:${(s.acc||0)*100}%"></i></div><span class="mut">${s.n} done · ${pct(s.acc)}</span></div>`}).join('')}</div>
+ <p><button class="btn" onclick="nav('plan')">Analyze my weak areas</button></p>`}
+
+function prac(){app.innerHTML=`<h1>Topic practice</h1><p class="mut">45 questions per topic. Open the Desmos button any time.</p><div class="grid">${TP.map(T=>{const l=PR.filter(q=>q.k===T.k),d=l.filter(q=>S.a[q.id]).length,s=tstat(T.k);
+ return`<div class="card"><b>${T.n}</b><div class="bar"><i style="width:${d/l.length*100}%"></i></div><div class="mut">${d}/${l.length} attempted · ${pct(s.acc)} correct</div><p><button class="btn" onclick="openQ(PR.filter(q=>q.k==='${T.k}'),'prac',true)">${d?'Continue':'Start'}</button></p></div>`}).join('')}</div>`}
+
+function bank(){const l=BK.filter(q=>(F.k==='all'||q.k===F.k)&&(F.s==='all'||st(q.id)===F.s));
+ app.innerHTML=`<h1>Question bank</h1><p class="mut">${BK.length} moderate-to-hard questions. Green = solved, red = missed.</p>
+ <div class="top"><span><select onchange="F.k=this.value;bank()" aria-label="Topic"><option value="all">All topics</option>${TP.map(T=>`<option value="${T.k}" ${F.k===T.k?'selected':''}>${T.n}</option>`).join('')}</select>
+ <select onchange="F.s=this.value;bank()" aria-label="Status">${['all','new','missed','solved'].map(s=>`<option ${F.s===s?'selected':''}>${s}</option>`).join('')}</select></span><span class="mut">${l.length} shown</span></div>
+ <div class="tiles">${l.map((q,i)=>`<button class="tile ${st(q.id)}" title="${tn(q.k)} · ${q.lv}" onclick="openQ(BK.filter(q=>(F.k==='all'||q.k===F.k)&&(F.s==='all'||st(q.id)===F.s)),'bank',${i})">${BK.indexOf(q)+1}</button>`).join('')}</div>`}
+
+/* ---------- quiz ---------- */
+function openQ(list,back,i){if(i===true)i=Math.max(0,list.findIndex(q=>!S.a[q.id]));Q={list,back,i,pick:null,t0:Date.now()};quiz()}
+function quiz(){const q=Q.list[Q.i],done=Q.pick!=null;
+ app.innerHTML=`<div class="top"><button class="btn alt" onclick="nav('${Q.back}')">Back</button><span class="mut">${tn(q.k)} · <span class="tag">${q.lv}</span> · ${Q.i+1} of ${Q.list.length}</span></div>
+ <div class="card"><p class="q">${q.q}</p>${q.ch.map((c,j)=>`<button class="ch ${done?(j===q.a?'ok':j===Q.pick?'no':''):''}" ${done?'disabled':''} onclick="pick(${j})">${'ABCD'[j]}. ${c}</button>`).join('')}
+ ${done?`<div class="ex"><b>${Q.pick===q.a?'Correct.':'Not quite.'}</b> ${q.e}</div>`:''}</div>
+ <div class="top" style="margin-top:12px"><button class="btn alt" ${Q.i?'':'disabled'} onclick="go(-1)">Previous</button><button class="btn" ${Q.i<Q.list.length-1?'':'disabled'} onclick="go(1)">Next question</button></div>`}
+function pick(j){if(Q.pick!=null)return;const q=Q.list[Q.i];Q.pick=j;S.a[q.id]={o:j===q.a?1:0,s:Math.min(600,Math.round((Date.now()-Q.t0)/1000)),k:q.k};save();quiz()}
+function go(d){Q.i+=d;Q.pick=null;Q.t0=Date.now();quiz()}
+
+/* ---------- plan analyzer ---------- */
+function plan(){const rows=TP.map(T=>({T,...tstat(T.k)})),n=rows.reduce((s,r)=>s+r.n,0);
+ const weak=rows.filter(r=>r.n>=5&&r.acc<.7).sort((a,b)=>a.acc-b.acc),fresh=rows.filter(r=>r.n<5),strong=rows.filter(r=>r.n>=5&&r.acc>=.7);
+ const days=S.g.date?Math.max(1,Math.ceil((new Date(S.g.date)-Date.now())/864e5)):30;
+ const need=weak.reduce((s,r)=>s+Math.max(15,45-r.n),0)+fresh.reduce((s,r)=>s+45-r.n,0),daily=Math.min(40,Math.max(10,Math.ceil(need/Math.max(1,days*.6))));
+ const slow=rows.filter(r=>r.n>=5&&r.tm>90),missed=BK.filter(q=>st(q.id)==='missed').length+PR.filter(q=>st(q.id)==='missed').length;
+ let out='';
+ if(n<10)out=`<div class="card">Answer at least 10 questions in Topic Practice and your plan appears here. Right now ${n} are logged.</div>`;
+ else out=`<div class="grid"><div class="card"><b>Weak areas</b><p>${weak.length?weak.map(r=>`${r.T.n} (${pct(r.acc)})`).join('<br>'):'None under 70% yet.'}</p></div>
+ <div class="card"><b>Not enough data</b><p>${fresh.length?fresh.map(r=>r.T.n).join('<br>'):'Every topic has 5+ attempts.'}</p></div>
+ <div class="card"><b>Strengths</b><p>${strong.length?strong.map(r=>`${r.T.n} (${pct(r.acc)})`).join('<br>'):'Keep practicing to build some.'}</p></div></div>
+ <h2>Your plan for the next ${days} days</h2><div class="card plan"><ol>
+ <li><b>Daily target: ${daily} questions.</b> Spread across the topics below, then re-check this page weekly.</li>
+ <li><b>Phase 1 (days 1–${Math.ceil(days*.4)}): fix the foundations.</b> ${weak.concat(fresh).slice(0,3).map(r=>r.T.n).join(', ')||'Do mixed topic practice'}. Read every explanation, then redo what you missed.</li>
+ <li><b>Phase 2 (days ${Math.ceil(days*.4)+1}–${Math.ceil(days*.85)}): raise difficulty.</b> Work the Question Bank filtered to your weak topics and aim for 80%+ accuracy.</li>
+ <li><b>Phase 3 (final ${days-Math.ceil(days*.85)||1} days): timed review.</b> Re-attempt missed questions (${missed} right now) at about 75 seconds each, and rest the day before the test.</li></ol>
+ ${slow.length?`<p>Pacing flag: you average over 90 seconds in ${slow.map(r=>r.T.n).join(', ')}. Practice shortcuts and use Desmos to check answers.</p>`:''}
+ <p><button class="btn" onclick="openQ(PR.concat(BK).filter(q=>st(q.id)==='missed'),'plan',0)" ${missed?'':'disabled'}>Review missed questions</button>
+ ${weak[0]?`<button class="btn alt" onclick="openQ(BK.filter(q=>q.k==='${weak[0].T.k}'),'plan',true)">Drill ${weak[0].T.n} (bank)</button>`:''}</p></div>`;
+ app.innerHTML=`<h1>Plan analyzer</h1><div class="top"><label>Test date <input type="date" value="${S.g.date||''}" onchange="S.g.date=this.value;save();plan()"></label></div>${out}`}
+
+/* ---------- Desmos ---------- */
+let calc;$('#dfab').onclick=()=>{const p=$('#dp');p.classList.toggle('open');
+ if(p.classList.contains('open')){if(!calc&&window.Desmos)calc=Desmos.GraphingCalculator($('#dc'),{keypad:true});else if(calc)calc.resize()}};
+nav('dash');
+</script>
+</body>
+</html>
