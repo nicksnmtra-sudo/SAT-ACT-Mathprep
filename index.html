@@ -5,10 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>GraphPaper – SAT & ACT Math Prep</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f4f7fb;--ink:#12263f;--mut:#5b6b80;--card:#fff;--line:#d5deea;--blue:#2456d6;--ok:#1f9d74;--no:#d64550;--hi:#ffe14d;--grid:rgba(36,86,214,.07)}
-@media(prefers-color-scheme:dark){:root{--bg:#0e1623;--ink:#e8eef7;--mut:#93a3b8;--card:#162235;--line:#2a3b54;--blue:#6b95ff;--ok:#3ccf9f;--no:#ff7b85;--hi:#ffe14d;--grid:rgba(107,149,255,.08)}}
+:root{--bg:#f3efe4;--ink:#14204a;--mut:#5d6580;--card:#fffdf7;--line:#d8d1bd;--blue:#3d5af1;--ok:#1f9d74;--no:#e5533a;--hi:#d9f23f;--grid:rgba(20,32,74,.06)}
 *{box-sizing:border-box}
 body{margin:0;font-family:'Bricolage Grotesque',system-ui,sans-serif;color:var(--ink);background:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px;line-height:1.5}
 header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:14px 20px;background:var(--card);border-bottom:2px solid var(--ink)}
@@ -19,12 +18,12 @@ nav button{border:1px solid transparent;background:none;padding:6px 12px;border-
 nav button.on{background:var(--ink);color:var(--bg)}
 nav button:hover:not(.on){border-color:var(--line)}
 main{max-width:980px;margin:0 auto;padding:24px 16px 120px}
-h1{font-size:30px;letter-spacing:-.8px;margin:0 0 4px}h2{font-size:19px;margin:24px 0 10px}
+h1,h2,.serif{font-family:Fraunces,Georgia,serif;letter-spacing:-.02em}h1{font-size:34px;margin:0 0 4px}h2{font-size:22px;margin:24px 0 10px}
 .mut{color:var(--mut);font-size:14px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px}
-.btn{background:var(--blue);color:#fff;border:0;border-radius:6px;padding:8px 14px;font-weight:600}
-.btn.alt{background:none;color:var(--ink);border:1px solid var(--line)}
+.btn{background:var(--ink);color:#fff;border:0;border-radius:999px;padding:10px 20px;font-weight:600;box-shadow:3px 3px 0 var(--hi)}.btn:disabled{opacity:.4}
+.btn.alt{background:none;color:var(--ink);border:2px solid var(--ink);box-shadow:none}
 .btn:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
 .bar{height:10px;background:var(--line);border-radius:5px;overflow:hidden;margin:6px 0}.bar i{display:block;height:100%;background:var(--blue)}
 .row{display:grid;grid-template-columns:150px 1fr 90px;gap:10px;align-items:center;margin:8px 0}
@@ -43,11 +42,35 @@ select,input{font:inherit;padding:7px 10px;border:1px solid var(--line);border-r
 #dp{position:fixed;right:16px;bottom:70px;width:min(640px,calc(100vw - 32px));height:min(520px,70vh);background:#fff;border:2px solid var(--ink);border-radius:8px;z-index:19;display:none;flex-direction:column;resize:both;overflow:hidden}
 #dp.open{display:flex}#dc{flex:1}
 @media(max-width:600px){.row{grid-template-columns:1fr}}
+
+body{overflow-x:hidden}.logo{cursor:pointer}
+.full{width:100vw;margin-left:calc(50% - 50vw);padding:60px max(16px,calc(50vw - 490px))}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:28px 0 20px}
+.hero h1{font-size:clamp(40px,7vw,70px);line-height:1;font-weight:800;margin:14px 0}
+.hero h1 u{text-decoration-color:var(--no);text-decoration-thickness:4px;text-underline-offset:8px}
+.pill{display:inline-block;border:2px solid var(--ink);border-radius:999px;padding:3px 14px;font-size:13px;font-weight:600}
+.hero p{font-size:18px;max-width:520px;color:var(--mut)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}
+.stats{display:flex;gap:36px;border-top:2px solid var(--ink);padding-top:14px;max-width:440px}.stats b{font:800 30px Fraunces,serif;display:block}.stats span{font-size:13px;color:var(--mut)}
+.plot{position:relative;transform:rotate(1.5deg)}.plot svg{width:100%;display:block;border-radius:14px;box-shadow:8px 8px 0 var(--ink)}
+.sticker{position:absolute;top:-14px;right:-8px;background:var(--hi);border:2px solid var(--ink);padding:3px 12px;font-weight:800;transform:rotate(4deg);border-radius:6px}
+.tick{background:var(--ink);color:#fff;overflow:hidden;white-space:nowrap;padding:14px 0}.tick div{display:inline-block;animation:tk 40s linear infinite;font-size:14px;letter-spacing:.08em}.tick i{color:var(--hi);font-style:normal;margin:0 22px}
+@keyframes tk{to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.tick div{animation:none}}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.three .card{border:2px solid var(--ink);border-radius:14px;box-shadow:4px 4px 0 var(--ink)}.three h3{font:700 22px Fraunces,serif;margin:6px 0}
+.sand{background:#e8e1cc}.dom{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border:2px solid var(--ink);border-radius:14px;background:var(--card);overflow:hidden}.dom>div{padding:18px;border-right:1px solid var(--line)}.dom b{font:700 20px Fraunces,serif}.dom em{float:right;font:700 22px Fraunces,serif;font-style:normal}.dom p{margin:6px 0 0;color:var(--mut);font-size:14px}
+.navy{background:var(--ink);color:#fff}.navy h2{font-size:34px;margin-top:0}.navy .mut{color:#b8c0dd}
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.dgrid button{text-align:left;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:14px;color:#fff}.dgrid button:hover{background:rgba(255,255,255,.14)}.dgrid small{color:var(--hi);display:block;margin-top:6px}
+.two{display:grid;grid-template-columns:1fr 1.2fr;gap:32px;align-items:center}
+.end{text-align:center}.end h2{font-size:clamp(30px,5vw,48px)}
+footer{background:var(--ink);color:#b8c0dd;padding:28px max(16px,calc(50vw - 490px));font-size:14px}footer b{color:#fff;font:700 20px Fraunces,serif}
+#dp{background:#fff}
+@media(max-width:700px){.hero,.two{grid-template-columns:1fr}.dgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header><div class="logo">Graph<span>Paper</span></div><nav id="nav"></nav></header>
+<header><div class="logo" onclick="nav('home')">Graph<span>Paper</span></div><nav id="nav"></nav></header>
 <main id="app"></main>
+<footer><b>GraphPaper</b><br>Graph it. Then prove it. Not affiliated with College Board, ACT or Desmos.</footer>
 <button id="dfab" aria-label="Toggle Desmos calculator">Desmos</button>
 <div id="dp"><div id="dc"></div></div>
 <script src="https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
@@ -115,8 +138,8 @@ const tstat=k=>{const e=Object.values(S.a).filter(x=>x.k===k),n=e.length,c=e.red
 const pct=x=>x==null?'–':Math.round(x*100)+'%';
 
 /* ---------- navigation ---------- */
-let view='dash',F={k:'all',s:'all'},Q={};
-function nav(v){view=v;$('#nav').innerHTML=[['dash','Dashboard'],['prac','Topic Practice'],['bank','Question Bank'],['plan','Plan Analyzer']].map(([k,l])=>`<button class="${k==v?'on':''}" onclick="nav('${k}')">${l}</button>`).join('');({dash,prac,bank,plan})[v]();window.scrollTo(0,0)}
+let view='home',F={k:'all',s:'all'},Q={};
+function nav(v){view=v;$('#nav').innerHTML=[['home','Home'],['dash','Dashboard'],['prac','Topic Practice'],['bank','Question Bank'],['plan','Plan Analyzer']].map(([k,l])=>`<button class="${k==v?'on':''}" onclick="nav('${k}')">${l}</button>`).join('');({home,dash,prac,bank,plan})[v]();window.scrollTo(0,0)}
 
 function dash(){const all=Object.values(S.a),n=all.length,c=all.reduce((s,x)=>s+x.o,0),acc=n?c/n:null;
  const est=n>=10?200+Math.round(600*acc/10)*10:null;
@@ -166,9 +189,31 @@ function plan(){const rows=TP.map(T=>({T,...tstat(T.k)})),n=rows.reduce((s,r)=>s
  app.innerHTML=`<h1>Plan analyzer</h1><div class="top"><label>Test date <input type="date" value="${S.g.date||''}" onchange="S.g.date=this.value;save();plan()"></label></div>${out}`}
 
 /* ---------- Desmos ---------- */
-let calc;$('#dfab').onclick=()=>{const p=$('#dp');p.classList.toggle('open');
- if(p.classList.contains('open')){if(!calc&&window.Desmos)calc=Desmos.GraphingCalculator($('#dc'),{keypad:true});else if(calc)calc.resize()}};
-nav('dash');
+let calc;$('#dfab').onclick=()=>dm();
+
+function home(){const fx=[['Solve any equation','y=3x+2','y=14'],['Systems, no algebra','y=2x+1','y=-x+7'],['Roots & vertex instantly','y=x^2-6x+5'],['Sliders for unknowns','y=kx+2','k=1']];
+ const tk=TP.map(T=>T.n.toUpperCase()).join('<i>✦</i>')+'<i>✦</i>';
+ app.innerHTML=`<section class="hero"><div><span class="pill">SAT & ACT · Math</span><h1>Graph your way to an <u>800</u>.</h1>
+ <p>Topic-by-topic practice, a ${BK.length}-question bank for the hard stuff, and a Desmos calculator on every page. We track what you miss and build your plan.</p>
+ <div class="cta"><button class="btn" onclick="nav('prac')">Start practicing</button><button class="btn alt" onclick="dm(true)">Open Desmos</button></div>
+ <div class="stats"><div><b>${TP.length}</b><span>topics</span></div><div><b>${PR.length+BK.length}</b><span>questions</span></div><div><b>1</b><span>smart plan</span></div></div></div>
+ <div class="plot"><svg viewBox="0 0 360 300" role="img" aria-label="A parabola, a line and a circle on a graph"><defs><pattern id="g" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#fff" stroke-opacity=".1"/></pattern></defs><rect width="360" height="300" fill="#14204a"/><rect width="360" height="300" fill="url(#g)"/><path d="M0 150H360M120 0V300" stroke="#fff" stroke-opacity=".5"/><path d="M110 40Q180 420 250 40" fill="none" stroke="#d9f23f" stroke-width="3.5"/><path d="M20 260L340 50" stroke="#fff" stroke-width="2.5"/><circle cx="250" cy="190" r="48" fill="none" stroke="#e5533a" stroke-width="3.5"/></svg><div class="sticker">(x − 3)² − 4</div></div></section>
+ <div class="tick full" style="padding-top:14px;padding-bottom:14px"><div>${tk+tk+tk+tk}</div></div>
+ <section class="full"><h2>Practice it. Graph it. Fix it.</h2><div class="three">
+ <div class="card"><h3>Practice</h3><p class="mut">45 questions per topic, each with a worked explanation. Start easy and build speed.</p></div>
+ <div class="card"><h3>Graph</h3><p class="mut">Desmos opens beside any question, the same calculator built into the digital SAT.</p></div>
+ <div class="card"><h3>Improve</h3><p class="mut">The plan analyzer spots weak topics and gives a day-by-day schedule to your test date.</p></div></div></section>
+ <section class="full sand"><h2>Four domains. One study plan.</h2><div class="dom">
+ <div><em>≈35%</em><b>Algebra</b><p>${tn('li')}, ${tn('sy')}</p></div><div><em>≈35%</em><b>Advanced Math</b><p>${tn('qu')}, ${tn('ex')}, ${tn('fn')}</p></div>
+ <div><em>≈15%</em><b>Problem Solving & Data</b><p>${tn('pr')}, ${tn('st')}</p></div><div><em>≈15%</em><b>Geometry & Trig</b><p>${tn('ge')}</p></div></div>
+ <p><button class="btn" onclick="nav('bank')">Browse the question bank</button></p></section>
+ <section class="full navy"><div class="two"><div><h2>The calculator is the cheat code. (It's allowed.)</h2><p class="mut">Desmos is built into the real digital SAT. Try these, then use it on your practice questions.</p><button class="btn" style="background:var(--hi);color:#14204a;box-shadow:3px 3px 0 #fff" onclick="dm(true)">Open Desmos</button></div>
+ <div class="dgrid">${fx.map(f=>`<button onclick='dm(true,${JSON.stringify(f.slice(1))})'><b>${f[0]}</b><small>Load in Desmos</small></button>`).join('')}</div></div></section>
+ <section class="full end"><h2>Your first set takes ten minutes.</h2><p class="mut">Start with linear equations, the most common question type.</p><button class="btn" onclick="openQ(PR.filter(q=>q.k==='li'),'prac',true)">Start learning free</button></section>`}
+function dm(open,ex){const p=$('#dp');open===true?p.classList.add('open'):p.classList.toggle('open');
+ if(p.classList.contains('open')){if(!calc&&window.Desmos)calc=Desmos.GraphingCalculator($('#dc'),{keypad:true});else if(calc)calc.resize();
+ if(ex&&calc){calc.setBlank();ex.forEach((l,i)=>calc.setExpression({id:'e'+i,latex:l}))}}}
+nav('home');
 </script>
 </body>
 </html>
